@@ -1,0 +1,1 @@
+select * from servicenow_ticket_prod limit 10

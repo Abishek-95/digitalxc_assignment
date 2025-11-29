@@ -1,0 +1,2 @@
+SELECT stp.inc_category,AVG(EXTRACT(EPOCH FROM (stp.inc_resolved_at_ts - stp.inc_sys_created_on_ts)) / 3600) AS avg_resolved_hours
+FROM {{ ref('cleaned_data') }} stp GROUP BY stp.inc_category ORDER BY avg_resolved_hours DESC
